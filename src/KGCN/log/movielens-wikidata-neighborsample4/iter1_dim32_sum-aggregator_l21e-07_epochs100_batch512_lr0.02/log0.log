@@ -1,0 +1,7 @@
+epoch 0 [73.2 s + 7.3 s] | train auc: 0.8882  acc: 0.8076  f1: 0.8101 | eval auc: 0.8700  eval acc: 0.7893  eval f1: 0.7924 | test auc: 0.8720  test acc: 0.7921  test f1: 0.7950
+epoch 1 [73.6 s + 7.1 s] | train auc: 0.9083  acc: 0.8298  f1: 0.8327 | eval auc: 0.8780  eval acc: 0.8006  eval f1: 0.8047 | test auc: 0.8802  test acc: 0.8024  test f1: 0.8060
+epoch 2 [73.2 s + 7.2 s] | train auc: 0.9234  acc: 0.8463  f1: 0.8483 | eval auc: 0.8865  eval acc: 0.8087  eval f1: 0.8115 | test auc: 0.8888  test acc: 0.8107  test f1: 0.8135
+epoch 3 [72.9 s + 7.2 s] | train auc: 0.9327  acc: 0.8566  f1: 0.8570 | eval auc: 0.8844  eval acc: 0.8064  eval f1: 0.8074 | test auc: 0.8848  test acc: 0.8064  test f1: 0.8074
+epoch 4 [73.8 s + 7.2 s] | train auc: 0.9431  acc: 0.8698  f1: 0.8723 | eval auc: 0.8873  eval acc: 0.8109  eval f1: 0.8152 | test auc: 0.8880  test acc: 0.8106  test f1: 0.8149
+epoch 5 [72.8 s + 7.2 s] | train auc: 0.9495  acc: 0.8783  f1: 0.8791 | eval auc: 0.8867  eval acc: 0.8118  eval f1: 0.8136 | test auc: 0.8883  test acc: 0.8123  test f1: 0.8142
+epoch 6 [71.8 s + 7.2 s] | train auc: 0.9573  acc: 0.8882  f1: 0.8879 | eval auc: 0.8821  eval acc: 0.8061  eval f1: 0.8064 | test auc: 0.8822  test acc: 0.8064  test f1: 0.8067

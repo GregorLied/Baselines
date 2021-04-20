@@ -1,0 +1,1 @@
+epoch 0 [62.1 s + 12.0 s] | train auc: 0.8804  acc: 0.7959  f1: 0.7965 | eval auc: 0.8687  eval acc: 0.7877  eval f1: 0.7887 | test auc: 0.8701  test acc: 0.7876  test f1: 0.7883
