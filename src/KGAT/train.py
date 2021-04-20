@@ -36,9 +36,7 @@ def train(args, data, show_loss, show_topk):
             # Training
             t0 = time()
             np.random.shuffle(train_data)
-            
-            print("Train CF")
-            
+
             # skip the last incomplete minibatch if its size < batch size
             start = 0
             while start + args.batch_size <= train_data.shape[0]:
@@ -47,8 +45,6 @@ def train(args, data, show_loss, show_topk):
                 if show_loss:
                     print(start, loss)
             train_phase_I_time = time() - t0
-            
-            print("Train KG")
 
             t1 = time()
             start = 0
@@ -59,9 +55,7 @@ def train(args, data, show_loss, show_topk):
                 if show_loss:
                     print(start, loss)
             train_phase_II_time = time() - t1
-            
-            print("EVAL MODEL")
-            
+
             # CTR evaluation
             t2 = time()
             train_auc, train_acc, train_f1 = ctr_eval(sess, model, train_data, args.batch_size)

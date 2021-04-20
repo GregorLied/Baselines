@@ -16,7 +16,7 @@ def get_filepath(dir_path):
     while os.path.exists(file_path):
         log_count += 1
         file_path = os.path.join(dir_path, 'log{:d}.log'.format(log_count))
-    return file_path
+    return file_paths
 
 np.random.seed(555)
 
@@ -27,16 +27,14 @@ parser.add_argument('--kg', type=str, default='wikidata', help='Choose knowledge
 parser.add_argument('--n_memory', type=int, default=32, help='size of ripple set for each hop / neighborhood sampling') # [8, 16, 32, 64] 32
 parser.add_argument('--n_hop', type=int, default=2, help='maximum hops / layers') #H [2, 3] 2
 parser.add_argument('--dim', type=int, default=16, help='dimension of entity and relation embeddings') #d [8, 16, 32]
-parser.add_argument('--l2_weight', type=float, default=1e-7, help='weight of the l2 regularization term') #lambda1 [10-7, 10-6, 10âˆ’5, 10-4, 10-3, 10-2]
-parser.add_argument('--kge_weight', type=float, default=0.01, help='weight of the KGE term') #lambda2 [10-7, 10-6, 10âˆ’5, 10-4, 10-3, 10-2]
-parser.add_argument('--item_update_mode', type=str, default='plus_transform',
-                    help='how to update item at the end of each hop')
-parser.add_argument('--using_all_hops', type=bool, default=True,
-                    help='whether using outputs of all hops or just the last hop when making prediction')
 parser.add_argument('--n_epochs', type=int, default=1000, help='the number of epochs') 
 parser.add_argument('--lr', type=float, default=0.01, help='learning rate') #n [0.05, 0.01, 0.005, 0.001]
 parser.add_argument('--batch_size', type=int, default=2048, help='batch size') # [256, 512, 1024, 2048, 4096]
+parser.add_argument('--l2_weight', type=float, default=1e-7, help='weight of the l2 regularization term') #lambda1 [10-7, 10-6, 10âˆ’5, 10-4, 10-3, 10-2]
+parser.add_argument('--kge_weight', type=float, default=0.01, help='weight of the KGE term') #lambda2 [10-7, 10-6, 10âˆ’5, 10-4, 10-3, 10-2]
 parser.add_argument('--show_topk', type=bool, default=False, help='Use topk eval or not')
+parser.add_argument('--item_update_mode', type=str, default='plus_transform', help='how to update item at the end of each hop')
+parser.add_argument('--using_all_hops', type=bool, default=True, help='whether using outputs of all hops or just the last hop when making prediction')
 
 # Logging
 args = parser.parse_args()

@@ -22,31 +22,16 @@ np.random.seed(555)
 
 parser = argparse.ArgumentParser()
 
-'''
-# movie: CURRENT BEST FOUND SETTING
-# epoch 4 [82.4 s + 11.1 s] | train auc: 0.8834  acc: 0.8053  f1: 0.8112 | eval auc: 0.8696  eval acc: 0.7941  eval f1: 0.8006 | test auc: 0.8712  test acc: 0.7941  test f1: 0.8007
-parser.add_argument('--dataset', type=str, default='movielens', help='Choose dataset from {movielens, lastfm}')
-parser.add_argument('--kg', type=str, default='wikidata', help='Choose knowledge graph from {wikidata, dbpedia}')
-parser.add_argument('--neighbor_sample_size', type=int, default=4, help='the number of neighbors to be sampled')
-parser.add_argument('--n_iter', type=int, default=2, help='number of layers / number of iterations when computing entity representation')
-parser.add_argument('--dim', type=int, default=32, help='dimension of user and entity embeddings')
-parser.add_argument('--aggregator', type=str, default='sum', help='which aggregator to use')
-parser.add_argument('--l2_weight', type=float, default=1e-7, help='weight of l2 regularization')
-parser.add_argument('--n_epochs', type=int, default=100, help='the number of epochs')
-parser.add_argument('--lr', type=float, default=2e-2, help='learning rate')
-parser.add_argument('--batch_size', type=int, default=512, help='batch size')
-'''
-
 parser.add_argument('--dataset', type=str, default='movielens', help='Choose dataset from {movielens, lastfm}')
 parser.add_argument('--kg', type=str, default='dbpedia', help='Choose knowledge graph from {wikidata, dbpedia}')
 parser.add_argument('--neighbor_sample_size', type=int, default=16, help='the number of neighbors to be sampled')
+parser.add_argument('--aggregator', type=str, default='sum', help='which aggregator to use')
 parser.add_argument('--n_iter', type=int, default=1, help='number of layers / number of iterations when computing entity representation')
 parser.add_argument('--dim', type=int, default=32, help='dimension of user and entity embeddings')
-parser.add_argument('--aggregator', type=str, default='sum', help='which aggregator to use')
-parser.add_argument('--l2_weight', type=float, default=1e-7, help='weight of l2 regularization')
 parser.add_argument('--n_epochs', type=int, default=10, help='the number of epochs')
 parser.add_argument('--lr', type=float, default=2e-2, help='learning rate')
 parser.add_argument('--batch_size', type=int, default=512, help='batch size')
+parser.add_argument('--l2_weight', type=float, default=1e-7, help='weight of l2 regularization')
 parser.add_argument('--show_topk', type=bool, default=False, help='Use topk eval or not')
 
 
