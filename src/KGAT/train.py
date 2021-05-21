@@ -56,6 +56,8 @@ def train(args, data, show_loss, show_topk):
                     print(start, loss)
             train_phase_II_time = time() - t1
 
+            model.update_attentive_A(sess)
+
             # CTR evaluation
             t2 = time()
             train_auc, train_acc, train_f1 = ctr_eval(sess, model, train_data, args.batch_size)
